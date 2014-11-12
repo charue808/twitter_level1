@@ -1,0 +1,22 @@
+<head>
+	<title>twitter</title>
+</head>
+<body>
+	<div class="container">
+		<header class="navbar navbar-default" role="navigation">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/">twitter</a>
+			</div>
+		</header>
+		<div id="main" class="row-fluid">
+			<div class="well">
+				<div class="form-group">
+					<label class="">What are you doing?</label>
+					<textarea id="posting" class="form-control"></textarea>
+					<input type="button" class="btn btn-primary" id="submit" value="Submit">
+				</div>
+			</div>
+			{{> postsList}}
+		</div>
+	</div>
+</body>
