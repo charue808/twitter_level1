@@ -20,3 +20,19 @@
 		</div>
 	</div>
 </body>
+
+<template name="postsList">
+	<div class="posts">
+		{{#each posts}}
+			{{> postItem}}
+		{{/each}}
+	</div>
+</template>
+
+<template name="postItem">
+	<div class="post">
+		<div class="post-content">
+			<p><a href="/">{{author}}</a> {{body}}<span>{{submittedText}}</span></p>
+		</div>
+	</div>
+</template>
