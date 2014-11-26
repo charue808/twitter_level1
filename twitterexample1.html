@@ -3,23 +3,42 @@
 </head>
 <body>
 	<div class="container">
-		<header class="navbar navbar-default" role="navigation">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="/">twitter</a>
-			</div>
-		</header>
-		<div id="main" class="row-fluid">
-			<div class="well">
-				<div class="form-group">
-					<label class="">What are you doing?</label>
-					<textarea id="posting" class="form-control"></textarea>
-					<input type="button" class="btn btn-primary" id="submit" value="Submit">
+		<div class="col-xs-12 col-sm-6 col-md-8">
+			<header class="navbar navbar-default" role="navigation">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="/">twitter</a>
 				</div>
+				<div class="collapse navbar-collapse" id="navigation">
+					<ul class="nav navbar-nav navbar-right">
+						{{> loginButtons}}
+					</ul>
+				</div>
+			</header>
+			<div id="main" class="row-fluid">
+				<div class="well">
+					{{>submitPost}}
+				</div>
+				{{> postsList}}
 			</div>
-			{{> postsList}}
 		</div>
 	</div>
 </body>
+
+<template name="submitPost">
+	<form role="form">
+		<div class="form-group">
+			<label for="message">What are you doing?</label>
+			<div class="form-group">
+				<textarea class="form-control" rows="4" name="message" id="textBody" type="text" value=""></textarea>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="text-right">
+				<input type="submit" value="submit" class="btn btn-primary" id="button">
+			</div>
+		</div>
+	</form>
+</template>
 
 <template name="postsList">
 	<div class="posts">
@@ -32,7 +51,7 @@
 <template name="postItem">
 	<div class="post">
 		<div class="post-content">
-			<p><a href="/">{{author}}</a> {{body}}<span>{{submittedText}}</span></p>
+			<p><a href="/">{{author}}</a> {{body}}<span> {{submittedText}}</span></p>
 		</div>
 	</div>
 </template>
