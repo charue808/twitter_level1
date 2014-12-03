@@ -21,12 +21,31 @@ if (Meteor.isClient) {
   passwordSignupFields: 'USERNAME_ONLY'
 });
 
-  Meteor.subscribe('posts');
+Meteor.subscribe('posts', function onReady() {
+  Session.set('postsLoaded', true);
+});  
+//  passed the function onReady to the subscription
+//  Session set the postsLoaded helper to true
 
 Template.postsList.helpers({
   posts: function() {
     return Posts.find({}, {sort:{submitted: -1}});
-  }
+  },
+  postsLoaded: function() {
+    return Session.get('postsLoaded');
+  } 
+  // postsLoaded add to postList helpers
+  // postloaded function returns Session postsLoaded
+});
+Template.submitPost.helpers({
+  textTotal: function() {
+    var textLength = 140;
+    return textLength;
+  },
+  textCount: function() {
+
+  },
+
 });
 
 Template.submitPost.events({
@@ -35,14 +54,10 @@ Template.submitPost.events({
     
     var post = { body: $(e.target).find('[name=message]').val() }
 
-   Meteor.call('post', post, function(error, id) {
-    if(error)
-      return alert(error.reason);
-   })
+   Meteor.call('post', post)
 
     document.getElementById('textBody').value = ' ';
 
-    
   }
 });
 
