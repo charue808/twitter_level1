@@ -8,6 +8,16 @@ body {
 	background: #eee;
 	color: #666666; }
 
+img {
+    border-color: transparent;
+    outline-style: hidden;
+}
+
+
+#logo {
+     margin-top: -10px;
+    
+}
 textarea {
 	resize: none; }
 
@@ -16,6 +26,11 @@ textarea {
 
 	.navbar .navbar-inner {
 		border-radius: 0px 0px 3px 3px; }
+
+.spinner {
+    margin-top: 500px;
+    margin-left: 200px;
+}
 
 .post {
 	*zoom: 1;
@@ -42,3 +57,52 @@ textarea {
 			font-size: 10px;
 			color: #aaaaaa; }
 
+
+
+#textBox {
+  /*background-image: url('../image/Twitterbox1.png');
+  background-repeat: no-repeat; */
+  height: 182px;
+  width:  645px;
+  margin-left:25px;
+}
+
+#theImage {
+   height: 182px;
+   width:  645px;
+   
+}
+
+
+
+#theTextBox {
+    position: absolute;
+    height: 110px;
+    width: 190px;
+    margin-top: -115px;
+    margin-left: 250px;
+    
+    
+    
+}
+
+.btn-group {
+  position: relative;
+  top: -25px;
+  margin-left: 170px;
+  
+}
+
+
+
+
+#helperIcon {
+   position: relative;
+   top: -56px;
+   margin-left: 360px;
+}
+
+#helperIcon img {
+  
+  width: 30px;
+} 

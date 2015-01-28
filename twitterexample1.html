@@ -6,7 +6,7 @@
 		<div class="col-xs-12 col-sm-6 col-md-8">
 			<header class="navbar navbar-default" role="navigation">
 				<div class="navbar-header">
-					<a class="navbar-brand" href="/">twitter</a>
+					<a class="navbar-brand" href="/"><img id="logo" src="/image/Twitter_logo_3.png"></a>
 				</div>
 				<div class="collapse navbar-collapse" id="navigation">
 					<ul class="nav navbar-nav navbar-right">
@@ -16,7 +16,11 @@
 			</header>
 			<div id="main" class="row-fluid">
 				<div class="well">
-					{{>submitPost}}
+                    {{#if currentUser}}
+					{{> submitPost}}
+                    {{else}}
+                    {{> userFeature}}
+                    {{/if}}
 				</div>
 				{{> postsList}}
 			</div>
@@ -33,8 +37,8 @@
 			</div>
 		</div>
 		<div class="form-group">
-			<div class="text-left" id="textareaCounter">
-				<p>{{textCount}}/{{textTotal}} </p>
+			<div class="text-left">
+				<p>Only first 140 characters will display</p>
 			</div>
 		</div>
 		<div class="form-group">
@@ -45,14 +49,31 @@
 	</form>
 </template>
 
+<template name="userFeature">
+    <div class="row" id="textBox">
+       <img id="theImage" src="/image/Twitterbox1.png">      
+            <img id="theTextBox" src="/image/wigflip-ds (1).gif">
+            <div class="btn btn-group-wrap">
+                <div class="btn-group">
+                    <button type="button" id="button1" class="btn btn-default">1</button>
+                    <button type="button" id="button2" class="btn btn-default">2</button>
+                    <button type="button" id="button3" class="btn btn-default">3</button>  
+                </div>
+            <div id="helperIcon">
+                <img src="http://icons.iconarchive.com/icons/madoyster/favorite-monsters/128/monster-gray-icon.png">
+            </div>
+        </div>
+    </div>
+</template>
+
 <template name="postsList">
 	<div class="posts">
 		{{#if postsLoaded}}  <!-- a postsList helpers. If posts are done loading -->
 		{{#each posts}}		 <!-- posts will show -->
 			{{> postItem}}
 		{{/each}}          	
-		{{else}}			 <!-- if else posts are not loaded then the spinner spins -->
-		{{> spinner}}
+		{{else}}
+            {{> spinner}} <!-- if else posts are not loaded then the spinner spins -->              
 		{{/if}}
 	</div>
 </template>
