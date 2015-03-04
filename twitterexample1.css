@@ -1,17 +1,11 @@
-
-
-
-
-
 textarea {
-	resize: none; }
+	resize: none; 
+}
 
 .navbar {
-margin-bottom: 10px; 
-height: 80px;
-background-color: white;
-border: white;}
-
+	background-color: white;
+	border: white;
+}
 
 .spinner {
     margin-top: 500px;
@@ -36,9 +30,13 @@ hr{
 
 .postImage{
 	display:inline-block; 
-	width:45px;
+	width:35px;
 	margin-right: 5px;
 }
+.postImage > img{
+	width:35px;
+}
+
 .postText{
 	vertical-align:middle;
 }
@@ -48,29 +46,9 @@ hr{
 	color: #aaaaaa; 
 }
 
-/*
-.well{
-	width: 650px;
-}
-
-.posts{
-	width: 650px;
-}
-*/
 .container{
-		width: 65%;
+		width: 610px;
 
-}
-#textBox {
-  /*background-image: url('../image/Twitterbox1.png');
-  background-repeat: no-repeat; 
-    margin-left:25px;
-*/
- 
-  height: 200px;
- /****
-  width:  650px;
-  ****/
 }
 
 #theImage {
@@ -79,29 +57,9 @@ hr{
    z-index: -1;  
 }
 
-
-#theTextBox {
-  /*
-    position: absolute;
-    height: 110px;
-    width: 190px;
-    left:450px;
-    top:125px;
-          z-index: 0;
-
-    */
-
- /*   margin-top: -115px;
-    margin-left: 250px;
-    */
-
-       
-}
-
 .blueUnderline{
    text-decoration: underline;
    color: blue;
-
 }
 
 .highlighted {
@@ -127,51 +85,21 @@ hr{
 }
 
 .btn-group {
-  /*
-  position: relative;
-  top: -25px;
-  margin-left: 170px;
-  */
-  	top: 5px;
-
+  top: 5px;
   width: 140px;
   margin-left: 20px;
-  
 }
 
-
-#button2 {
-	margin-left: 5px;
-}
-
-
-#button3 {
+#button2, #button3 {
 	margin-left: 5px;
 }
 
 #helperIcon {
-/*   
-position: relative;
-top: -56px;
-   margin-left: 360px;
-
-  */
 	position: absolute;
 	left:150px;
 	top: 130px;
-/*
-	position: absolute;
-    top:225px;
-
-	left:570px;
-
-	z-index: 0;
-
-*/
-
 }
 
 #helperIcon img {
-  
   width: 30px;
 } 
