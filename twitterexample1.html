@@ -14,6 +14,15 @@
 					</ul>
 				</div>
 			</header>
+
+					{{#if currentUser}}
+                    {{else}}
+                    <br/> <br/>
+                    <p class="description">
+                    	A global coommunity of friends and strangers answering one simple question: <span class="highlighted">What are you doing?</span>
+                    	</p>
+                    {{/if}}	
+
 			<div id="main" class="row-fluid">
 				<div class="well">
                     {{#if currentUser}}
@@ -27,7 +36,6 @@
 		</div>
 	</div>
 </body>
-
 <template name="submitPost">
 	<form role="form">
 		<div class="form-group">
@@ -51,22 +59,29 @@
 
 <template name="userFeature">
     <div class="row" id="textBox">
-       <img id="theImage" src="/image/Twitterbox1.png">      
-            <img id="theTextBox" src="/image/wigflip-ds (1).gif">
-            <div class="btn btn-group-wrap">
-                <div class="btn-group">
-                    <button type="button" id="button1" class="btn btn-default">1</button>
-                    <button type="button" id="button2" class="btn btn-default">2</button>
-                    <button type="button" id="button3" class="btn btn-default">3</button>  
-                </div>
-            <div id="helperIcon">
-                <img src="http://icons.iconarchive.com/icons/madoyster/favorite-monsters/128/monster-gray-icon.png">
-            </div>
-        </div>
+      
+	        <div>
+	        	<img id="theImage" src="/image/Twitterbox1.png">      
+	        	<div class="btn-group-wrap">
+		        	<img id="theTextBox" src="/image/wigflip-ds (1).gif">
+		        	<div id="helperIcon">
+		            	<img src="http://icons.iconarchive.com/icons/madoyster/favorite-monsters/128/monster-gray-icon.png">
+		        	</div>
+		            <div class="btn-group">
+		                <button type="button" id="button1" class="btn btn-default">1</button> 
+		                <button type="button" id="button2" class="btn btn-default">2</button> 
+		                <button type="button" id="button3" class="btn btn-default">3</button>  
+		            </div>
+	            </div>
+	        
+	    	</div>
     </div>
 </template>
 
 <template name="postsList">
+	<p class="blueUnderline">
+		Recent Public Updates
+	</p>
 	<div class="posts">
 		{{#if postsLoaded}}  <!-- a postsList helpers. If posts are done loading -->
 		{{#each posts}}		 <!-- posts will show -->
@@ -81,7 +96,7 @@
 <template name="postItem">
 	<div class="post">
 		<div class="post-content">
-			<p><a href="/">{{author}}</a> {{body}}<span> {{submittedText}}</span></p>
+			<p><a href="/" class="blueUnderline"><strong>{{author}}</strong></a> {{body}} <span class="postTime blueUnderline" data-livestamp={{submittedText}}></span></p>
 		</div>
 	</div>
 </template>

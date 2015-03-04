@@ -1,17 +1,4 @@
-.grid-block, .main, .post {
-	background: #fff;
-	border-radius: 3px;
-	margin-bottom: 10px; 
-	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15); }
 
-body {
-	background: #eee;
-	color: #666666; }
-
-img {
-    border-color: transparent;
-    outline-style: hidden;
-}
 
 
 #logo {
@@ -32,69 +19,127 @@ textarea {
     margin-left: 200px;
 }
 
-.post {
-	*zoom: 1;
-	position: relative;
-	opacity: 1; }
+.postTime{
 
-	.post:before, .post:after{
-		content: "";
-		display: table; }
-	.post:after {
-		clear: both; }
-	.post.invisible {
-		opacity: 0; }
-	.post .post-content {
-		float: left;
-		margin: 15px; }
-		.post .post-content a {
-			font-size: 14px;
-			font-weight: bold; }
-		.post .post-content p {
-			font-size: 14px;
-			font-weight: normal; }
-		.post .post-content p span {
 			font-size: 10px;
-			color: #aaaaaa; }
+			color: #aaaaaa; 
+}
 
 
+.well{
+	width: 650px;
+}
+
+.posts{
+	width: 650px;
+}
 
 #textBox {
   /*background-image: url('../image/Twitterbox1.png');
-  background-repeat: no-repeat; */
-  height: 182px;
-  width:  645px;
-  margin-left:25px;
+  background-repeat: no-repeat; 
+    margin-left:25px;
+*/
+ 
+  height: 200px;
+  width:  650px;
 }
 
 #theImage {
-   height: 182px;
-   width:  645px;
-   
+   height: 200 px;
+   width:  500px;
+   z-index: -1;  
 }
 
 
 #theTextBox {
+  /*
     position: absolute;
     height: 110px;
     width: 190px;
-    margin-top: -115px;
+    left:450px;
+    top:125px;
+          z-index: 0;
+
+    */
+
+ /*   margin-top: -115px;
     margin-left: 250px;
+    */
+
        
 }
 
+.blueUnderline{
+   text-decoration: underline;
+   color: blue;
+
+}
+
+.highlighted {
+	background-color: yellow;
+}
+
+.description{
+	font-size: 16px;
+	width: 650px;
+}
+
+.btn-group-wrap{
+  position: absolute;
+
+  z-index: 0;
+  top:180px;
+  left:450px;
+  z-index: 0;
+  background-color: yellowgreen;
+
+  width: 200px;
+  height: 200px;
+}
+
 .btn-group {
+  /*
   position: relative;
   top: -25px;
   margin-left: 170px;
+  */
+  	top: 5px;
+
+  width: 140px;
+  margin-left: 20px;
   
 }
 
 
+#button2 {
+	margin-left: 5px;
+}
+
+
+#button3 {
+	margin-left: 5px;
+}
+
 #helperIcon {
-   position: relative;
-   top: -56px;
+/*   
+position: relative;
+top: -56px;
    margin-left: 360px;
+
+  */
+	position: absolute;
+	left:150px;
+	top: 130px;
+/*
+	position: absolute;
+    top:225px;
+
+	left:570px;
+
+	z-index: 0;
+
+*/
+
 }
 
 #helperIcon img {
