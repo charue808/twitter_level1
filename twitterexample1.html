@@ -17,10 +17,10 @@
 
 					{{#if currentUser}}
                     {{else}}
-                    <br/> <br/>
-                    <p class="description">
-                    	A global coommunity of friends and strangers answering one simple question: <span class="highlighted">What are you doing?</span>
-                    	</p>
+	                    <br/> <br/>
+	                    <p class="description">
+	                    	A global coommunity of friends and strangers answering one simple question: <span class="highlighted">What are you doing?</span>
+	                    	</p>
                     {{/if}}	
 
 			<div id="main" class="row-fluid">
@@ -36,6 +36,9 @@
 		</div>
 	</div>
 </body>
+
+
+
 <template name="submitPost">
 	<form role="form">
 		<div class="form-group">
@@ -95,8 +98,14 @@
 
 <template name="postItem">
 	<div class="post">
-		<div class="post-content">
-			<p><a href="/" class="blueUnderline"><strong>{{author}}</strong></a> {{body}} <span class="postTime blueUnderline" data-livestamp={{submittedText}}></span></p>
+		<div class="postContent">
+			<div class="postImage">
+			<img src={{authorImageURL}} width="45px">
+			</div>
+			<div class="postText" style="display:inline-block; max-width:520px">
+			<span class="blueUnderline"><strong>{{author}}</strong></span> {{body}} <span class="postTime blueUnderline" data-livestamp={{submittedText}}></span> 
+			</div>
 		</div>
 	</div>
+	<hr>
 </template>

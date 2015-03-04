@@ -1,13 +1,19 @@
+// https://atmospherejs.com/jparker/gravatar
+// https://github.com/copleykj/meteor-livestamp/
+
 Posts = new Mongo.Collection('posts');
 
 Meteor.methods({
   post: function(postAttributes) {
     var user = Meteor.user()
+    var authorEmail = Meteor.user().emails[0].address;
+  
 
     var post = _.extend(_.pick(postAttributes, 'body'), {
       userId: user._id,
       author: user.username,
-      submitted: new Date().getTime()
+      submitted: new Date().getTime(),
+      authorImageURL:  Gravatar.imageUrl(authorEmail)
     });
 
     var postId = Posts.insert(post);
@@ -17,10 +23,11 @@ Meteor.methods({
 });
 
 if (Meteor.isClient) {
+
   Accounts.ui.config({
-  passwordSignupFields: 'USERNAME_ONLY'
-});
-    
+  passwordSignupFields: 'USERNAME_AND_EMAIL'
+  });
+ 
     
 Meteor.Spinner.options = {
     lines: 13, // The number of lines to draw
@@ -75,7 +82,18 @@ Template.submitPost.events({
 Template.postItem.helpers({
   submittedText: function() {
     return  new Date(this.submitted).toString();
+  },
+  myGravatarURL: function() {
+    var myEmail = Meteor.user().emails[0].address;
+    return Gravatar.imageUrl(myEmail);
+  },
+  userGravatarURL: function(authorName) {
+    console.log("user found: " +  Meteor.users.findOne({username: authorName}));
+
+    var userEmail = Meteor.users.findOne({username: authorName}).emails[0].address;
+    return Gravatar.imageUrl(userEmail);
   }
+  
 });
     
 Template.userFeature.events({
