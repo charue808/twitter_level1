@@ -47,8 +47,11 @@ hr{
 }
 
 .container{
-		width: 610px;
+	width: 610px;
+}
 
+.well{
+	height:250px;
 }
 
 #theImage {
@@ -72,14 +75,21 @@ hr{
 }
 
 .btn-group-wrap{
+	/*
   position: absolute;
 
-  z-index: 0;
   top:180px;
   left:450px;
   z-index: 0;
   background-color: yellowgreen;
+*/
 
+  position: relative;
+
+  top:-180px;
+  left:350px;
+  z-index: 0;
+  background-color: yellowgreen;
   width: 200px;
   height: 200px;
 }
