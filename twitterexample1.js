@@ -98,17 +98,17 @@ Template.postItem.helpers({
     
 Template.userFeature.events({
   'click #button1': function () {
-     document.getElementById('theImage').src="/image/Twitterbox1.png";
-     document.getElementById('theTextBox').src="/image/wigflip-ds (2).png";
+     document.getElementById('theImage').src="/image/Screenshot 1.2.png";
+     /*document.getElementById('theTextBox').src="/image/wigflip-ds (2).png"; */
     },
   'click #button2': function () {
-     document.getElementById('theImage').src="/image/twitterinvite2.png";
-     document.getElementById('theTextBox').src="/image/wigflip-ds (4).png";
+     document.getElementById('theImage').src="/image/Screenshot 2.png";
+     /*document.getElementById('theTextBox').src="/image/wigflip-ds (4).png"; */
      
     },
   'click #button3': function () {
-     document.getElementById('theImage').src="/image/twitter3.png";
-     document.getElementById('theTextBox').src="/image/wigflip-ds (3).png";
+     document.getElementById('theImage').src="/image/screenshot 3.png";
+     /*document.getElementById('theTextBox').src="/image/wigflip-ds (3).png"; */
     },
 })
 
